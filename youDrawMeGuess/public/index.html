@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="stylesheets/bootstrap.min.css"> -->
+    <script src="javascripts/jquery.min.js"></script>
+    <!-- <script src="javascripts/bootstrap.min.js"></script> -->
+    <style>
+    body{
+      font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+    }
+    #content{
+     /*background-color: chocolate;*/
+    }
+    input{
+      height: 30px;
+    width: 200px;
+    margin-top: 25px;
+    border: 1px solid #CECEF6;
+    border-radius: 5px;
+    }
+    button{
+      margin-left: 0;
+    border: none;
+    background-color: white;
+    width: 100px;
+    height: 27px;
+    margin-left: 45px;
+    margin-top: 25px;
+    font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+    border-radius: 20px;
+    }
+    label{
+      margin-left: 31px;
+    }
+    </style>
+    </head>
+<body style="background-image: url('images/regbg.jpg');background-size: 100% 100%; background-repeat: no-repeat">
+    <div id='content'>
+    <img src="images/font.png" style="margin-top: 5%" width="100%"/>
+    <form style="margin-top:25px;">
+        <div>
+            <label>用户名：</label>
+
+                <input type="text"  id="userName" placeholder="请输入用户名">
+
+        </div>
+        <div>
+            <label style="margin-left:46px">密码：</label>
+                <input type="password" id="password" placeholder="请输入密码">
+        </div>
+                <button id="signIn">登录</button>
+                <button id="register">注册</button>
+    </form>
+</div>
+</div>
+</body>
+<script src="javascripts/index.js"></script>
+</html>

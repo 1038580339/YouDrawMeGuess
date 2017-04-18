@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="javascripts/socket.io.js"></script>
+    <script src="javascripts/jquery.min.js"></script>
+    <script src='javascripts/alert/alert.js'></script>
+    <style>
+    body{
+      font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+    }
+        canvas{
+              border-bottom: 2px turquoise solid;
+            /*background-color: black;*/
+            display: none;
+        }
+        input{
+            border: solid #00B7FF 1px ;
+            width:80%;
+            height: 31px;
+            border-radius: 9px;
+            outline: none;
+        }
+
+        button{
+            border:  #00B7FF solid 1px;
+            background-color: white;
+            width: 15%;
+            height: 30px;
+            color:#00B7FF;
+            border-radius: 28px;
+            outline: none;
+        }
+        /*button:hover{
+            background-color: #00B7FF;
+            color: white;
+        }*/
+        #message{
+          height: 250px;
+          width: 100%;
+          margin-top: 0;
+          overflow: auto;
+          border-radius: 2px;
+          background-color: khaki;
+        }
+        .pmessage{
+            background-color: turquoise;
+            width: 182px;
+            height: auto;
+            margin-left: 35px;
+            margin-top: -9px;
+            border-radius: 12px;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            color: white;
+        }
+        #selectColor ul li{
+         list-style-type: none;
+         float:left;
+         display: block;
+         width: 20px;
+         height: 20px;
+         border-radius: 50%;
+         background-color: blue;
+         margin-left: 5px;
+        }
+        #selectColor ul{
+          padding: 0;
+          margin: 0 auto;
+         margin-top: 8px;
+        }
+        #bottom{
+          position: absolute;
+          bottom:0;
+          width: 100%;
+          background-color: khaki;
+        }
+        #notKown{
+          display: none;
+          /*margin-top: 6px;*/
+          padding-bottom: 7px;
+          text-align: center;
+          background-color: darkkhaki;
+          color: white;
+        }
+        #kownAnswer{
+          display: none;
+          /*margin-top: 45px;*/
+          padding-bottom: 7px;
+          text-align: center;
+      background-color: darkkhaki;
+        color: white;
+        }
+        #sendAnswerContent{
+          margin-top: 10px;
+        }
+        .overTime{
+          text-align: center;
+          color: white;
+          background: black;
+          opacity: 0.5;
+          width: 140px;
+         margin: 0px auto;
+         border-radius: 7px;
+         margin-top: 10px;
+         margin-bottom: 10px;
+        }
+        #countDown{
+          width:0;
+          background-color: #FFA500;
+          height: 25px;
+          position: absolute;
+          opacity: 0.8;
+          margin: 0;
+          padding: 0;
+          margin-top: -28px;
+        }
+
+    </style>
+</head>
+<body>
+<canvas id="wCanvas" width="100%" height="500"></canvas>
+<canvas id="gCanvas" width="100%" height="500"></canvas>
+<div id="selectColor" style="height:33px;">
+  <ul>
+   <li style="background-color:black"></li>
+   <li style="background-color:#EEAD0E"></li>
+   <li style="background-color:#FF3030"></li>
+   <li style="background-color:#ADFF2F"></li>
+   <li style="background-color:#8E388E"></li>
+   <li style="background-color:#8B1A1A"></li>
+   <li style="background-color:#00688B"></li>
+   <li style="background-color:#C71585"></li>
+   <li style="background-color:#B8B8B8"></li>
+   <li style="background-color:white;border:black 1px solid"></li>
+  </ul>
+    <button style='width:95px; float:right' id='startPlay'>准备开始</button>
+</div>
+ <div id='sendAnswerContent'>
+   <input type="text" id='inputAnswer'/>
+   <button id='sendAnswer'>答案</button>
+ </div>
+ <div id='roomMessage' style="height:28px">
+   <span style="float:left;">在线人数：<span id='onlineNum'></span></span>
+   <span style="float:right;">我的身份：<span id='myName'></span></span>
+ </div>
+ <div style="height:25px;width:100%;">
+ <div id='notKown'>
+ <span>房主已开始游戏！！！</span>
+ </div>
+ <div id='kownAnswer'>
+ <span>本轮谜底为：</span>
+ <span id='kownAnswerContent'></span>
+ </div>
+ <!-- 倒计时 -->
+ <div id='countDown'></div>
+ </div>
+ </div>
+<div id='message'>
+<h5 style='margin:10px'>聊天室</h5>
+</div>
+<div id='bottom'>
+<input type="text" id='input'/>
+<button id='sendMessage'>发送</button>
+</div>
+</body>
+ <script src="javascripts/two.js"></script>
+</html>

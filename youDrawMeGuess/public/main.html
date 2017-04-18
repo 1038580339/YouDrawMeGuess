@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>你画我猜</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="stylesheets/main.css" rel="stylesheet"/>
+    <script src="javascripts/jquery.min.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
+    <link rel="shortcut icon" href="images/icon.ico"/>
+</head>
+<body>
+<header>
+        <img src="images/menu.png" id="menu" width="30px" height="30px" style="float: left; margin-top: 15px; margin-left: 10px">
+        <img src="images/touxiang.jpg" id="icon" width="50px" height="50px" style="border-radius: 50%; float: right; margin-top: 5px;margin-right: 10px"/>
+</header>
+<div id="menuHide">
+    <ul>
+        <li style="background-image: url('images/home.png')" class="menuLi" id="hall"><a class="menuA">聊天大厅</a></li>
+        <li style="background-image: url('images/two.png')" class="menuLi" id="two"><a class="menuA">二人对战</a></li>
+        <li style="background-image: url('images/five.png')" class="menuLi" id="five"><a class="menuA">多人对战</a></li>
+        <li style="background-image: url('images/integral.png')" class="menuLi" id="hero"><a class="menuA">积分排名</a></li>
+        <li style="background-image: url('images/person.png');" class="menuLi" id="personal"><a class="menuA">个人中心</a></li>
+        </ul>
+    </div>
+<div id="userHide">
+    <ul>
+        <li>用户名：<span id="userName"></span></li>
+        <li>用户账号：<span id="userId"></span></li>
+        <li>积分：<span id="grade"></span></li>
+        <li id="goCenter">
+            <span>用户中心</span>
+        </li>
+    </ul>
+</div>
+<iframe frameborder=0 width=100%  marginheight=0 marginwidth=0 scrolling=no src="hall.html"></iframe>
+
+</body>
+<script src="javascripts/main.js"></script>
+</html>
